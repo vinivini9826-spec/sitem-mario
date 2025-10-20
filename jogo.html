@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo - Mario Bros</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="jogo">
+
+  <header>
+    <h1 class="titulo">🏁 Desafio do Mario</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="personagens.html">Personagens</a></li>
+        <li><a href="jogo.html" class="ativo">Jogo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Clique no bloco para ganhar moedas!</h2>
+    <div class="jogo-area">
+      <div class="bloco-jogo" onclick="ganharMoeda()"></div>
+      <p id="moedas">💰 Moedas: 0</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Mundo Mario Bros | Continue pulando!</p>
+  </footer>
+
+  <script>
+    let moedas = 0;
+    function ganharMoeda() {
+      moedas++;
+      document.getElementById('moedas').textContent = `💰 Moedas: ${moedas}`;
+      const som = new Audio("https://www.myinstants.com/media/sounds/mario-coin.mp3");
+      som.play();
+    }
+  </script>
+
+</body>
+</html>
